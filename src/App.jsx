@@ -61,7 +61,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>By ~ Divyansh Jha</h1>
+      <h1 className='name-title'>By ~ Divyansh Jha</h1>
       <h2>
         TIC <span className="text-green">TAC</span> TOE
       </h2>
