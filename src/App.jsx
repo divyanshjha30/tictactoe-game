@@ -15,7 +15,7 @@ function App() {
 
   const gamingBoard = history[currentMove];
 
-  const winner = calculateWinner(gamingBoard.squares);
+  const { winner, winningSquares } = calculateWinner(gamingBoard.squares);
 
   const handleSquareClick = clickedPosition => {
     if (gamingBoard.squares[clickedPosition] || winner) {
@@ -65,11 +65,14 @@ function App() {
       <Board
         squares={gamingBoard.squares}
         handleSquareClick={handleSquareClick}
+        winningSquares={winningSquares}
       />
 
-      <button type="button" onClick={onNewGameStart} className={
-        `btn-reset ${ winner ? 'active' : '' }`
-      }>
+      <button
+        type="button"
+        onClick={onNewGameStart}
+        className={`btn-reset ${winner ? 'active' : ''}`}
+      >
         Start new game
       </button>
       <h2>Current game history</h2>
